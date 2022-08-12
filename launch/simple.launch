@@ -1,0 +1,5 @@
+<launch>
+    <include file='$(find turtlebot_bringup)/launch/minimal.launch'/>
+    <node pkg="mouse_commander" type="simple_sketch.py" name="sketch" output="screen"/>
+    <node pkg="mouse_commander" type="simple_move_base.py" name="mark_map" output="screen"/>
+</launch>
