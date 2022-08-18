@@ -3,7 +3,7 @@
 import numpy as np
 import rospy as ros
 from geometry_msgs.msg import Twist
-from mouse_commander.msg import Int64Array
+from sketch_and_go.msg import Int64Array
 from rospy.numpy_msg import numpy_msg
 
 SPEED = 0.15

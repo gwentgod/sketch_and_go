@@ -1,8 +1,0 @@
-<launch>
-    <include file='$(find turtlebot3_gazebo)/launch/turtlebot3_house.launch'/>
-    <include file='$(find turtlebot3_navigation)/launch/turtlebot3_navigation.launch'>
-        <arg name='map_file' value='$(find mouse_commander)/house.yaml'/>
-    </include>
-    <node pkg="mouse_commander" type="Sketchpad.py" name="sketchpad" output="screen"/>
-    <node pkg="mouse_commander" type="mark_map.py" name="mark_map"/>
-</launch>

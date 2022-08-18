@@ -1,9 +1,10 @@
-#!/home/steve/miniconda3/envs/ros/bin/python
+#!/usr/bin/env python3
+
 import cv2 as cv
 import numpy as np
 
-from cv_bridge import CvBridge
 import rospy as ros
+import ros_numpy
 from sensor_msgs.msg import Image
 
 from MoveBaseClient import MoveBaseClient
@@ -17,7 +18,6 @@ class Sketchpad:
     def __init__(self):
         self.mouse_down = False
         self.selected = None
-        self.bridge = CvBridge()
 
         self.reset_path()
 
@@ -41,7 +41,8 @@ class Sketchpad:
 
     def get_cam(self):
         if self.imgmsg:
-            self.img = self.bridge.imgmsg_to_cv2(self.imgmsg, "bgr8")
+            # self.img = self.bridge.imgmsg_to_cv2(self.imgmsg, "bgr8")
+            self.img = ros_numpy.numpify(self.imgmsg)
             if self.milestones.size > 0:
                 self.mark_milestones()
             else:

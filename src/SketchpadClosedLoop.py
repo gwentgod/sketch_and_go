@@ -1,11 +1,11 @@
-#!/home/steve/miniconda3/envs/ros/bin/python
+#!/usr/bin/env python3
 
 import cv2 as cv
 import numpy as np
 
 import rospy as ros
 from rospy.numpy_msg import numpy_msg
-from mouse_commander.msg import Int64Array
+from sketch_and_go.msg import Int64Array
 
 
 class Sketchpad:

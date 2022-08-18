@@ -3,7 +3,7 @@ from scipy.spatial.transform import Rotation
 
 import rospy
 from rospy.numpy_msg import numpy_msg
-from mouse_commander.msg import Float64Array
+from sketch_and_go.msg import Float64Array
 
 k = np.array([[641.1105893484068, 0.0,               540.5],
               [0.0,               641.1105893484068, 360.5],

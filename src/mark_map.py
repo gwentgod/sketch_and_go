@@ -1,4 +1,4 @@
-#!/home/steve/miniconda3/envs/ros/bin/python
+#!/usr/bin/env python3
 
 from glob import glob
 from tkinter.messagebox import NO
@@ -7,11 +7,11 @@ import numpy as np
 import rospy as ros
 import rospkg
 from rospy.numpy_msg import numpy_msg
-from mouse_commander.msg import Float64Array
+from sketch_and_go.msg import Float64Array
 
 
 rospack = rospkg.RosPack()
-pack_path = rospack.get_path('mouse_commander')
+pack_path = rospack.get_path('sketch_and_go')
 map_img = cv.imread(pack_path+'/house.pgm')
 map_img = cv.resize(map_img, (map_img.shape[0]*2, map_img.shape[1]*2))
 map_copy = np.copy(map_img)
